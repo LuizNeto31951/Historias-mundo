@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "572398802928",
+    "project_id": "historiasmundo-b9a7b",
+    "storage_bucket": "historiasmundo-b9a7b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:572398802928:android:5f210fef298d359770ef35",
+        "android_client_info": {
+          "package_name": "com.example.historias_mundo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3EvHCnoBVpY8NkrLYHiYXAO_9E2bXg58"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

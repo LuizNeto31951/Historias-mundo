@@ -1,16 +1,7 @@
 # historias_mundo
 
-A new Flutter project.
+Ao rodar, baixar NDK 25.1.8937393 via android studio, pois a NDK nativa do flutter estava conflitando com a biblioteca do firebase. 
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Também é necessario trocar no flutter.groovy o valor do ndkVersion que vem como padrão: "23.1.7779620" para "25.1.8937393", para isso acessar
+o diretorio onde o flutter está instalado:
+** <flutter_dir>\flutter\packages\flutter_tools\gradle\src\main\groovy\flutter.groovy ** 

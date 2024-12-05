@@ -1,0 +1,484 @@
+{
+    "historias": [
+        {
+            "_id": 1,
+            "pais": "Japão",
+            "bandeira": "japao.jpg",
+            "titulo": "Amaterasu, a Deusa do Sol",
+            "descricao": "Amaterasu é uma das principais divindades do xintoísmo, conhecida como a deusa do Sol.",
+            "image": "amaterasu.png",
+            "detalhada": [
+                "Amaterasu nasceu do olho esquerdo de Izanagi durante um ritual de purificação, simbolizando a luz que guia e sustenta o mundo.",
+                "Após uma discussão acalorada com seu irmão Susanoo, que causou caos e destruição, Amaterasu se escondeu em uma caverna celestial, mergulhando o mundo em trevas.",
+                "Os deuses, preocupados com a ausência da luz, organizaram uma festa do lado de fora da caverna. Eles colocaram um espelho brilhante e incentivaram uma deusa a realizar uma dança extravagante, que chamou a atenção de Amaterasu.",
+                "Curiosa, Amaterasu saiu para observar a dança, e sua imagem foi refletida no espelho. Nesse momento, os deuses fecharam a caverna, trazendo de volta a luz do Sol ao mundo. Essa história simboliza a importância da harmonia e da luz na vida humana."
+            ],
+            "likes": 0
+        },
+        {
+            "_id": 2,
+            "pais": "Japão",
+            "bandeira": "japao.jpg",
+            "titulo": "Susanoo e a Serpente Yamata-no-Orochi",
+            "descricao": "A história de Susanoo e sua vitória contra a serpente de oito cabeças, Yamata-no-Orochi.",
+            "image": "susanoo.jpg",
+            "detalhada": [
+                "Susanoo, expulso do céu após um conflito com Amaterasu, encontrou uma família devastada pela serpente Yamata-no-Orochi, que exigia o sacrifício anual de uma jovem.",
+                "Com pena da família, ele prometeu derrotar a serpente em troca da mão da filha mais jovem em casamento.",
+                "Susanoo preparou oito barris de saquê e os colocou ao redor de uma aldeia. Quando a serpente bebeu o saquê e caiu em um sono profundo, Susanoo aproveitou para decapitá-la, uma cabeça de cada vez.",
+                "Dentro do corpo da serpente, ele encontrou a lendária espada Kusanagi, que mais tarde se tornou um dos Três Tesouros Sagrados do Japão. Este conto representa a vitória da coragem sobre o caos."
+            ],
+            "likes": 0
+        },
+        {
+            "_id": 3,
+            "pais": "Japão",
+            "bandeira": "japao.jpg",
+            "titulo": "Izanagi e Izanami, os Criadores do Japão",
+            "descricao": "Os deuses Izanagi e Izanami criaram as ilhas do Japão e deram origem a várias divindades.",
+            "image": "izanagi.jpg",
+            "detalhada": [
+                "Izanagi e Izanami foram incumbidos de criar o mundo. Usando uma lança celestial, eles mexeram nas águas primordiais, criando a primeira ilha, Onogoro.",
+                "Eles se casaram e começaram a dar vida às ilhas do Japão e aos deuses. No entanto, durante o nascimento do deus do fogo, Kagutsuchi, Izanami foi gravemente ferida e faleceu, descendo ao submundo.",
+                "Inconsolável, Izanagi tentou resgatá-la, mas foi repelido pelos horrores do submundo, quebrando sua conexão para sempre.",
+                "Após escapar, Izanagi realizou um ritual de purificação, de onde surgiram Amaterasu, Tsukuyomi e Susanoo. Esse mito explica tanto a origem divina das ilhas quanto os ciclos de vida e morte."
+            ],
+            "likes": 0
+        },
+        {
+            "_id": 4,
+            "pais": "Japão",
+            "bandeira": "japao.jpg",
+            "titulo": "Tsukuyomi, o Deus da Lua",
+            "descricao": "Tsukuyomi é o deus da Lua e irmão de Amaterasu, associado à noite.",
+            "image": "tsukuyomi.png",
+            "detalhada": [
+                "Tsukuyomi nasceu durante o ritual de purificação de Izanagi, simbolizando a calma e a serenidade da noite.",
+                "Certo dia, ele foi enviado para representar os deuses em um banquete oferecido pela deusa Ukemochi, da fartura. Indignado com a forma como ela produziu os alimentos, Tsukuyomi a matou.",
+                "Amaterasu, enojada com o ato de seu irmão, jurou nunca mais olhar para ele, criando a separação eterna entre o dia e a noite.",
+                "Essa história simboliza o equilíbrio entre luz e escuridão e a necessidade de respeitar as dádivas da natureza."
+            ],
+            "likes": 0
+        },
+        {
+            "_id": 5,
+            "pais": "Grécia",
+            "bandeira": "grecia.png",
+            "titulo": "A Caixa de Pandora",
+            "descricao": "Pandora abriu uma caixa que trouxe todos os males ao mundo, mas também deixou a esperança.",
+            "image": "pandora.jpg",
+            "detalhada": [
+                "Pandora foi criada por Hefesto sob as ordens de Zeus, com a ajuda de outros deuses, que lhe deram beleza, inteligência e curiosidade.",
+                "Zeus a enviou como um presente aos mortais, carregando uma caixa misteriosa que ela foi instruída a nunca abrir.",
+                "Movida pela curiosidade, Pandora abriu a caixa, liberando doenças, sofrimento e outros males que rapidamente se espalharam pelo mundo.",
+                "No entanto, no fundo da caixa restava a esperança, simbolizando a capacidade humana de resistir e superar adversidades, mesmo em tempos difíceis."
+            ],
+            "likes": 0
+        },
+        {
+            "_id": 6,
+            "pais": "Grécia",
+            "bandeira": "grecia.png",
+            "titulo": "O Labirinto de Dédalo e o Minotauro",
+            "descricao": "Teseu enfrentou o Minotauro no labirinto criado por Dédalo.",
+            "image": "labirinto.jpg",
+            "detalhada": [
+                "O Minotauro, uma criatura metade homem e metade touro, nasceu como um castigo divino para Minos, rei de Creta.",
+                "Dédalo, o maior inventor da época, foi encarregado de construir um labirinto para aprisionar o monstro.",
+                "Teseu, com a ajuda de Ariadne, usou um fio mágico para navegar pelo labirinto, localizando e derrotando o Minotauro.",
+                "A vitória de Teseu representa a superação da barbárie pela civilização e a vitória da astúcia sobre a força bruta."
+            ],
+            "likes": 0
+        },
+        {
+            "_id": 7,
+            "pais": "Grécia",
+            "bandeira": "grecia.png",
+            "titulo": "Prometeu e o Fogo dos Deuses",
+            "descricao": "Prometeu roubou o fogo dos deuses para dá-lo à humanidade, desafiando Zeus.",
+            "image": "prometeu.jpeg",
+            "detalhada": [
+                "Prometeu, um titã astuto, sentia compaixão pelos humanos, que viviam na escuridão e no frio.",
+                "Ele escalou o Olimpo e roubou o fogo sagrado, entregando-o aos mortais, proporcionando progresso e inovação.",
+                "Como punição, Zeus acorrentou Prometeu a uma montanha, onde uma águia devorava seu fígado diariamente, que se regenerava à noite.",
+                "Este mito exalta o sacrifício pela humanidade e o poder transformador do conhecimento e da tecnologia."
+            ],
+            "likes": 0
+        },
+        {
+            "_id": 8,
+            "pais": "Grécia",
+            "bandeira": "grecia.png",
+            "titulo": "A Guerra de Troia",
+            "descricao": "Uma guerra lendária entre gregos e troianos, iniciada pelo rapto de Helena.",
+            "image": "troia.png",
+            "detalhada": [
+                "A guerra começou com uma disputa entre as deusas Hera, Atena e Afrodite, que levou Páris a escolher Afrodite como a mais bela.",
+                "Afrodite recompensou Páris com o amor de Helena, esposa de Menelau, desencadeando a ira dos gregos.",
+                "O cerco de Troia durou dez anos, culminando com a estratégia do Cavalo de Troia, que permitiu aos gregos invadir e destruir a cidade.",
+                "A lenda explora temas de amor, vingança e o impacto da guerra na humanidade."
+            ],
+            "likes": 0
+        },
+        {
+            "_id": 9,
+            "pais": "Roma",
+            "bandeira": "roma.png",
+            "titulo": "A Fundação de Roma: Rômulo e Remo",
+            "descricao": "A lenda dos irmãos Rômulo e Remo, fundadores de Roma.",
+            "image": "romulo.jpg",
+            "detalhada": [
+                "Rômulo e Remo eram filhos do deus Marte e da mortal Reia Sílvia, mas foram abandonados em um cesto no rio Tibre para escapar de um usurpador. Uma loba os encontrou e cuidou deles, tornando-se um dos símbolos mais famosos de Roma.",
+                "Criados por um pastor, os irmãos cresceram fortes e destemidos, decidindo fundar uma cidade no local onde foram salvos pela loba.",
+                "Uma disputa surgiu sobre quem daria o nome à cidade. Após uma luta feroz, Rômulo matou Remo e deu seu nome à cidade: Roma.",
+                "Essa história simboliza o espírito de conquista, a força e a determinação que definiram o império romano."
+            ],
+            "likes": "0"
+        },
+        {
+            "_id": 10,
+            "pais": "Roma",
+            "bandeira": "roma.png",
+            "titulo": "O Rapto das Sabinas",
+            "descricao": "Um episódio lendário que retrata a expansão inicial de Roma.",
+            "image": "sabinas.jpg",
+            "detalhada": [
+                "Após a fundação de Roma, Rômulo percebeu que a cidade carecia de mulheres para garantir sua continuidade. Ele planejou uma festa e convidou os Sabinos, um povo vizinho.",
+                "Durante o evento, os romanos raptaram as mulheres sabinas, causando grande indignação entre os Sabinos.",
+                "Anos depois, quando os Sabinos tentaram resgatar suas mulheres, elas intervieram, pedindo paz entre os dois povos, pois haviam se apegado aos romanos e já formado famílias.",
+                "A lenda enfatiza a união de diferentes povos como base para a expansão e prosperidade de Roma."
+            ],
+            "likes": "0"
+        },
+        {
+            "_id": 11,
+            "pais": "Roma",
+            "bandeira": "roma.png",
+            "titulo": "Eneas e a Fundação de Lavínio",
+            "descricao": "A odisseia de Eneias, o ancestral mítico de Roma.",
+            "image": "eneas.jpg",
+            "detalhada": [
+                "Após a destruição de Troia, Eneias liderou um grupo de sobreviventes em busca de uma nova terra, enfrentando desafios e aventuras, narradas na Eneida de Virgílio.",
+                "Guiado pelos deuses, Eneias chegou ao Lácio, onde se casou com Lavínia, filha do rei local, fundando a cidade de Lavínio.",
+                "Sua jornada simboliza o destino manifesto de Roma, como um império que uniria o mundo sob a proteção dos deuses.",
+                "A história de Eneias conecta a mitologia grega à identidade romana, destacando valores como coragem, dever e sacrifício."
+            ],
+            "likes": "0"
+        },
+        {
+            "_id": 12,
+            "pais": "Roma",
+            "bandeira": "roma.png",
+            "titulo": "A Profecia das Sibilas",
+            "descricao": "As Sibilas eram profetisas respeitadas no mundo romano, famosas por seus oráculos.",
+            "image": "sibilas.jpg",
+            "detalhada": [
+                "A Sibila de Cumas foi uma das mais célebres, consultada por reis e generais. Ela era conhecida por entregar profecias em folhas dispersas pelo vento.",
+                "Certa vez, a Sibila ofereceu ao rei Tarquínio nove livros sagrados a um preço exorbitante. Após queimar seis livros e insistir no preço, o rei finalmente comprou os três restantes, que continham as profecias do destino de Roma.",
+                "Esses livros, conhecidos como Livros Sibilinos, foram usados como referência em momentos críticos da história romana.",
+                "A história destaca a importância da fé e da sabedoria divina na condução de Roma como uma potência global."
+            ],
+            "likes": "0"
+        },
+        {
+            "_id": 13,
+            "pais": "Brasil",
+            "bandeira": "brasil.png",
+            "titulo": "O Curupira",
+            "descricao": "O protetor das florestas com os pés virados para trás.",
+            "image": "curupira.jpg",
+            "detalhada": [
+                "O Curupira é uma figura do folclore indígena brasileiro, conhecido por proteger a natureza de caçadores e madeireiros inescrupulosos.",
+                "Com cabelos de fogo e pés virados para trás, ele confunde seus perseguidores ao deixar rastros falsos.",
+                "Sua presença é um alerta para o respeito à floresta e à vida selvagem, punindo aqueles que a exploram de forma destrutiva.",
+                "A lenda do Curupira simboliza o papel protetor da natureza e a conexão dos povos indígenas com o meio ambiente."
+            ],
+            "likes": "0"
+        },
+        {
+            "_id": 14,
+            "pais": "Brasil",
+            "bandeira": "brasil.png",
+            "titulo": "A Iara, a Mãe d'Água",
+            "descricao": "Uma sereia que atrai pescadores para o fundo dos rios.",
+            "image": "iara.jpg",
+            "detalhada": [
+                "Iara, uma bela mulher com cabelos longos e olhos hipnotizantes, é uma figura fascinante e perigosa do folclore brasileiro.",
+                "Diz-se que ela canta melodias irresistíveis, atraindo pescadores e viajantes para o fundo dos rios.",
+                "Segundo a lenda, Iara era uma guerreira indígena traída por seus irmãos e transformada em uma criatura aquática como punição.",
+                "A história reflete os mistérios das águas brasileiras e o poder das lendas como advertências para respeitar a natureza."
+            ],
+            "likes": "0"
+        },
+        {
+            "_id": 15,
+            "pais": "Brasil",
+            "bandeira": "brasil.png",
+            "titulo": "A Lenda do Saci-Pererê",
+            "descricao": "O travesso guardião das matas.",
+            "image": "saci.jpg",
+            "detalhada": [
+                "O Saci é um garoto negro de uma perna só, que usa um gorro vermelho e anda envolto em redemoinhos.",
+                "Conhecido por suas travessuras, ele troca os animais de lugar, apaga fogões e esconde objetos domésticos.",
+                "Apesar de ser brincalhão, o Saci também é um protetor da natureza, punindo aqueles que causam destruição.",
+                "A lenda do Saci representa o espírito lúdico e crítico da cultura brasileira, destacando o respeito pelo meio ambiente."
+            ],
+            "likes": "0"
+        },
+        {
+            "_id": 16,
+            "pais": "Brasil",
+            "bandeira": "brasil.png",
+            "titulo": "O Boto Cor-de-Rosa",
+            "descricao": "O encantador dos rios amazônicos.",
+            "image": "boto.jpg",
+            "detalhada": [
+                "O Boto Cor-de-Rosa é um espírito aquático que se transforma em um belo rapaz nas noites de festa.",
+                "Ele seduz mulheres e, ao amanhecer, retorna ao rio, deixando mistério e lendas em sua trilha.",
+                "Essa história é frequentemente usada como explicação folclórica para gestações inesperadas ou relações proibidas.",
+                "A lenda do Boto reforça a rica cultura amazônica e o imaginário místico das águas brasileiras."
+            ],
+            "likes": "0"
+        },
+        {
+            "_id": 17,
+            "pais": "Japãoo",
+            "bandeira": "japao.jpg",
+            "titulo": "Amaterasu, a Deusa do Sol",
+            "descricao": "Amaterasu é uma das principais divindades do xintoísmo, conhecida como a deusa do Sol.",
+            "image": "amaterasu.png",
+            "detalhada": [
+                "Amaterasu nasceu do olho esquerdo de Izanagi durante um ritual de purificação, simbolizando a luz que guia e sustenta o mundo.",
+                "Após uma discussão acalorada com seu irmão Susanoo, que causou caos e destruição, Amaterasu se escondeu em uma caverna celestial, mergulhando o mundo em trevas.",
+                "Os deuses, preocupados com a ausência da luz, organizaram uma festa do lado de fora da caverna. Eles colocaram um espelho brilhante e incentivaram uma deusa a realizar uma dança extravagante, que chamou a atenção de Amaterasu.",
+                "Curiosa, Amaterasu saiu para observar a dança, e sua imagem foi refletida no espelho. Nesse momento, os deuses fecharam a caverna, trazendo de volta a luz do Sol ao mundo. Essa história simboliza a importância da harmonia e da luz na vida humana."
+            ],
+            "likes": 0
+        },
+        {
+            "_id": 18,
+            "pais": "Japãoo",
+            "bandeira": "japao.jpg",
+            "titulo": "Susanoo e a Serpente Yamata-no-Orochi",
+            "descricao": "A história de Susanoo e sua vitória contra a serpente de oito cabeças, Yamata-no-Orochi.",
+            "image": "susanoo.jpg",
+            "detalhada": [
+                "Susanoo, expulso do céu após um conflito com Amaterasu, encontrou uma família devastada pela serpente Yamata-no-Orochi, que exigia o sacrifício anual de uma jovem.",
+                "Com pena da família, ele prometeu derrotar a serpente em troca da mão da filha mais jovem em casamento.",
+                "Susanoo preparou oito barris de saquê e os colocou ao redor de uma aldeia. Quando a serpente bebeu o saquê e caiu em um sono profundo, Susanoo aproveitou para decapitá-la, uma cabeça de cada vez.",
+                "Dentro do corpo da serpente, ele encontrou a lendária espada Kusanagi, que mais tarde se tornou um dos Três Tesouros Sagrados do Japãoo. Este conto representa a vitória da coragem sobre o caos."
+            ],
+            "likes": 0
+        },
+        {
+            "_id": 19,
+            "pais": "Japãoo",
+            "bandeira": "japao.jpg",
+            "titulo": "Izanagi e Izanami, os Criadores do Japão",
+            "descricao": "Os deuses Izanagi e Izanami criaram as ilhas do Japão e deram origem a várias divindades.",
+            "image": "izanagi.jpg",
+            "detalhada": [
+                "Izanagi e Izanami foram incumbidos de criar o mundo. Usando uma lança celestial, eles mexeram nas águas primordiais, criando a primeira ilha, Onogoro.",
+                "Eles se casaram e começaram a dar vida às ilhas do Japão e aos deuses. No entanto, durante o nascimento do deus do fogo, Kagutsuchi, Izanami foi gravemente ferida e faleceu, descendo ao submundo.",
+                "Inconsolável, Izanagi tentou resgatá-la, mas foi repelido pelos horrores do submundo, quebrando sua conexão para sempre.",
+                "Após escapar, Izanagi realizou um ritual de purificação, de onde surgiram Amaterasu, Tsukuyomi e Susanoo. Esse mito explica tanto a origem divina das ilhas quanto os ciclos de vida e morte."
+            ],
+            "likes": 0
+        },
+        {
+            "_id": 20,
+            "pais": "Japão",
+            "bandeira": "japao.jpg",
+            "titulo": "Tsukuyomi, o Deus da Lua",
+            "descricao": "Tsukuyomi é o deus da Lua e irmão de Amaterasu, associado à noite.",
+            "image": "tsukuyomi.png",
+            "detalhada": [
+                "Tsukuyomi nasceu durante o ritual de purificação de Izanagi, simbolizando a calma e a serenidade da noite.",
+                "Certo dia, ele foi enviado para representar os deuses em um banquete oferecido pela deusa Ukemochi, da fartura. Indignado com a forma como ela produziu os alimentos, Tsukuyomi a matou.",
+                "Amaterasu, enojada com o ato de seu irmão, jurou nunca mais olhar para ele, criando a separação eterna entre o dia e a noite.",
+                "Essa história simboliza o equilíbrio entre luz e escuridão e a necessidade de respeitar as dádivas da natureza."
+            ],
+            "likes": 0
+        },
+        {
+            "_id": 21,
+            "pais": "Gréciaa",
+            "bandeira": "grecia.png",
+            "titulo": "A Caixa de Pandora",
+            "descricao": "Pandora abriu uma caixa que trouxe todos os males ao mundo, mas também deixou a esperança.",
+            "image": "pandora.jpg",
+            "detalhada": [
+                "Pandora foi criada por Hefesto sob as ordens de Zeus, com a ajuda de outros deuses, que lhe deram beleza, inteligência e curiosidade.",
+                "Zeus a enviou como um presente aos mortais, carregando uma caixa misteriosa que ela foi instruída a nunca abrir.",
+                "Movida pela curiosidade, Pandora abriu a caixa, liberando doenças, sofrimento e outros males que rapidamente se espalharam pelo mundo.",
+                "No entanto, no fundo da caixa restava a esperança, simbolizando a capacidade humana de resistir e superar adversidades, mesmo em tempos difíceis."
+            ],
+            "likes": 0
+        },
+        {
+            "_id": 22,
+            "pais": "Gréciaa",
+            "bandeira": "grecia.png",
+            "titulo": "O Labirinto de Dédalo e o Minotauro",
+            "descricao": "Teseu enfrentou o Minotauro no labirinto criado por Dédalo.",
+            "image": "labirinto.jpg",
+            "detalhada": [
+                "O Minotauro, uma criatura metade homem e metade touro, nasceu como um castigo divino para Minos, rei de Creta.",
+                "Dédalo, o maior inventor da época, foi encarregado de construir um labirinto para aprisionar o monstro.",
+                "Teseu, com a ajuda de Ariadne, usou um fio mágico para navegar pelo labirinto, localizando e derrotando o Minotauro.",
+                "A vitória de Teseu representa a superação da barbárie pela civilização e a vitória da astúcia sobre a força bruta."
+            ],
+            "likes": 0
+        },
+        {
+            "_id": 23,
+            "pais": "Gréciaa",
+            "bandeira": "grecia.png",
+            "titulo": "Prometeu e o Fogo dos Deuses",
+            "descricao": "Prometeu roubou o fogo dos deuses para dá-lo à humanidade, desafiando Zeus.",
+            "image": "prometeu.jpeg",
+            "detalhada": [
+                "Prometeu, um titã astuto, sentia compaixão pelos humanos, que viviam na escuridão e no frio.",
+                "Ele escalou o Olimpo e roubou o fogo sagrado, entregando-o aos mortais, proporcionando progresso e inovação.",
+                "Como punição, Zeus acorrentou Prometeu a uma montanha, onde uma águia devorava seu fígado diariamente, que se regenerava à noite.",
+                "Este mito exalta o sacrifício pela humanidade e o poder transformador do conhecimento e da tecnologia."
+            ],
+            "likes": 0
+        },
+        {
+            "_id": 24,
+            "pais": "Gréciaa",
+            "bandeira": "grecia.png",
+            "titulo": "A Guerra de Troia",
+            "descricao": "Uma guerra lendária entre gregos e troianos, iniciada pelo rapto de Helena.",
+            "image": "troia.png",
+            "detalhada": [
+                "A guerra começou com uma disputa entre as deusas Hera, Atena e Afrodite, que levou Páris a escolher Afrodite como a mais bela.",
+                "Afrodite recompensou Páris com o amor de Helena, esposa de Menelau, desencadeando a ira dos gregos.",
+                "O cerco de Troia durou dez anos, culminando com a estratégia do Cavalo de Troia, que permitiu aos gregos invadir e destruir a cidade.",
+                "A lenda explora temas de amor, vingança e o impacto da guerra na humanidade."
+            ],
+            "likes": 0
+        },
+        {
+            "_id": 25,
+            "pais": "Romaa",
+            "bandeira": "roma.png",
+            "titulo": "A Fundação de Roma: Rômulo e Remo",
+            "descricao": "A lenda dos irmãos Rômulo e Remo, fundadores de Roma.",
+            "image": "romulo.jpg",
+            "detalhada": [
+                "Rômulo e Remo eram filhos do deus Marte e da mortal Reia Sílvia, mas foram abandonados em um cesto no rio Tibre para escapar de um usurpador. Uma loba os encontrou e cuidou deles, tornando-se um dos símbolos mais famosos de Roma.",
+                "Criados por um pastor, os irmãos cresceram fortes e destemidos, decidindo fundar uma cidade no local onde foram salvos pela loba.",
+                "Uma disputa surgiu sobre quem daria o nome à cidade. Após uma luta feroz, Rômulo matou Remo e deu seu nome à cidade: Roma.",
+                "Essa história simboliza o espírito de conquista, a força e a determinação que definiram o império romano."
+            ],
+            "likes": "0"
+        },
+        {
+            "_id": 26,
+            "pais": "Romaa",
+            "bandeira": "roma.png",
+            "titulo": "O Rapto das Sabinas",
+            "descricao": "Um episódio lendário que retrata a expansão inicial de Roma.",
+            "image": "sabinas.jpg",
+            "detalhada": [
+                "Após a fundação de Roma, Rômulo percebeu que a cidade carecia de mulheres para garantir sua continuidade. Ele planejou uma festa e convidou os Sabinos, um povo vizinho.",
+                "Durante o evento, os romanos raptaram as mulheres sabinas, causando grande indignação entre os Sabinos.",
+                "Anos depois, quando os Sabinos tentaram resgatar suas mulheres, elas intervieram, pedindo paz entre os dois povos, pois haviam se apegado aos romanos e já formado famílias.",
+                "A lenda enfatiza a união de diferentes povos como base para a expansão e prosperidade de Roma."
+            ],
+            "likes": "0"
+        },
+        {
+            "_id": 27,
+            "pais": "Romaa",
+            "bandeira": "roma.png",
+            "titulo": "Eneas e a Fundação de Lavínio",
+            "descricao": "A odisseia de Eneias, o ancestral mítico de Roma.",
+            "image": "eneas.jpg",
+            "detalhada": [
+                "Após a destruição de Troia, Eneias liderou um grupo de sobreviventes em busca de uma nova terra, enfrentando desafios e aventuras, narradas na Eneida de Virgílio.",
+                "Guiado pelos deuses, Eneias chegou ao Lácio, onde se casou com Lavínia, filha do rei local, fundando a cidade de Lavínio.",
+                "Sua jornada simboliza o destino manifesto de Roma, como um império que uniria o mundo sob a proteção dos deuses.",
+                "A história de Eneias conecta a mitologia grega à identidade romana, destacando valores como coragem, dever e sacrifício."
+            ],
+            "likes": "0"
+        },
+        {
+            "_id": 28,
+            "pais": "Romaa",
+            "bandeira": "roma.png",
+            "titulo": "A Profecia das Sibilas",
+            "descricao": "As Sibilas eram profetisas respeitadas no mundo romano, famosas por seus oráculos.",
+            "image": "sibilas.jpg",
+            "detalhada": [
+                "A Sibila de Cumas foi uma das mais célebres, consultada por reis e generais. Ela era conhecida por entregar profecias em folhas dispersas pelo vento.",
+                "Certa vez, a Sibila ofereceu ao rei Tarquínio nove livros sagrados a um preço exorbitante. Após queimar seis livros e insistir no preço, o rei finalmente comprou os três restantes, que continham as profecias do destino de Roma.",
+                "Esses livros, conhecidos como Livros Sibilinos, foram usados como referência em momentos críticos da história romana.",
+                "A história destaca a importância da fé e da sabedoria divina na condução de Roma como uma potência global."
+            ],
+            "likes": "0"
+        },
+        {
+            "_id": 29,
+            "pais": "Brasill",
+            "bandeira": "brasil.png",
+            "titulo": "O Curupira",
+            "descricao": "O protetor das florestas com os pés virados para trás.",
+            "image": "curupira.jpg",
+            "detalhada": [
+                "O Curupira é uma figura do folclore indígena brasileiro, conhecido por proteger a natureza de caçadores e madeireiros inescrupulosos.",
+                "Com cabelos de fogo e pés virados para trás, ele confunde seus perseguidores ao deixar rastros falsos.",
+                "Sua presença é um alerta para o respeito à floresta e à vida selvagem, punindo aqueles que a exploram de forma destrutiva.",
+                "A lenda do Curupira simboliza o papel protetor da natureza e a conexão dos povos indígenas com o meio ambiente."
+            ],
+            "likes": "0"
+        },
+        {
+            "_id": 30,
+            "pais": "Brasill",
+            "bandeira": "brasil.png",
+            "titulo": "A Iara, a Mãe d'Água",
+            "descricao": "Uma sereia que atrai pescadores para o fundo dos rios.",
+            "image": "iara.jpg",
+            "detalhada": [
+                "Iara, uma bela mulher com cabelos longos e olhos hipnotizantes, é uma figura fascinante e perigosa do folclore brasileiro.",
+                "Diz-se que ela canta melodias irresistíveis, atraindo pescadores e viajantes para o fundo dos rios.",
+                "Segundo a lenda, Iara era uma guerreira indígena traída por seus irmãos e transformada em uma criatura aquática como punição.",
+                "A história reflete os mistérios das águas brasileiras e o poder das lendas como advertências para respeitar a natureza."
+            ],
+            "likes": "0"
+        },
+        {
+            "_id": 31,
+            "pais": "Brasill",
+            "bandeira": "brasil.png",
+            "titulo": "A Lenda do Saci-Pererê",
+            "descricao": "O travesso guardião das matas.",
+            "image": "saci.jpg",
+            "detalhada": [
+                "O Saci é um garoto negro de uma perna só, que usa um gorro vermelho e anda envolto em redemoinhos.",
+                "Conhecido por suas travessuras, ele troca os animais de lugar, apaga fogões e esconde objetos domésticos.",
+                "Apesar de ser brincalhão, o Saci também é um protetor da natureza, punindo aqueles que causam destruição.",
+                "A lenda do Saci representa o espírito lúdico e crítico da cultura brasileira, destacando o respeito pelo meio ambiente."
+            ],
+            "likes": "0"
+        },
+        {
+            "_id": 32,
+            "pais": "Brasill",
+            "bandeira": "brasil.png",
+            "titulo": "O Boto Cor-de-Rosa",
+            "descricao": "O encantador dos rios amazônicos.",
+            "image": "boto.jpg",
+            "detalhada": [
+                "O Boto Cor-de-Rosa é um espírito aquático que se transforma em um belo rapaz nas noites de festa.",
+                "Ele seduz mulheres e, ao amanhecer, retorna ao rio, deixando mistério e lendas em sua trilha.",
+                "Essa história é frequentemente usada como explicação folclórica para gestações inesperadas ou relações proibidas.",
+                "A lenda do Boto reforça a rica cultura amazônica e o imaginário místico das águas brasileiras."
+            ],
+            "likes": "0"
+        }
+    ]
+}
