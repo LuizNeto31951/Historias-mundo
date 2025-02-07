@@ -10,7 +10,6 @@ class EstadoApp extends ChangeNotifier {
   Situacao _situacao = Situacao.mostrandoHistorias;
   Situacao get situacao => _situacao;
 
-  var _googleSignIn = GoogleSignIn();
   GoogleSignInAccount? googleAccount;
 
   late int _idHistoria;
@@ -36,7 +35,7 @@ class EstadoApp extends ChangeNotifier {
   }
 
   void onLogin(Function showToast) async {
-    googleAccount = await _googleSignIn.signIn();
+    googleAccount = await GoogleSignIn().signIn();
     if (googleAccount?.displayName != null) {
       _usuario = Usuario(googleAccount?.displayName, googleAccount?.email);
       notifyListeners();
@@ -47,7 +46,7 @@ class EstadoApp extends ChangeNotifier {
   }
 
   void onLogout() async {
-    googleAccount = await _googleSignIn.signOut();
+    googleAccount = await GoogleSignIn().signOut();
     _usuario = null;
 
     notifyListeners();

@@ -1,8 +1,7 @@
-import 'dart:convert';
+import 'package:historias_mundo/apis/api.dart';
 import 'package:historias_mundo/componentes/historiacard.dart';
 import 'package:historias_mundo/estado.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:toast/toast.dart';
 
 class Historias extends StatefulWidget {
@@ -15,65 +14,24 @@ class Historias extends StatefulWidget {
 }
 
 class _HistoriasState extends State<Historias> {
-  late List<dynamic> _feedEstatico = [];
-  late Map<String, List<dynamic>> _historiasPorPais = {};
-  late List<String> _paisesCarregados = [];
-
+  late List<dynamic> _historiasCarregadas = [];
   bool _carregando = false;
   late TextEditingController _controladorFiltragem;
   String _filtro = "";
   late ScrollController _scrollController;
-
-  int _paginaAtual = 1;
-  final int _itensPorPagina = 3;
+  late ServicoHistorias _servicoHistorias;
+  int _ultimaHistoria = 0;
+  final int _itensPorPagina = 6;
 
   @override
   void initState() {
     super.initState();
     ToastContext().init(context);
+    _servicoHistorias = ServicoHistorias();
     _controladorFiltragem = TextEditingController();
     _scrollController = ScrollController();
     _scrollController.addListener(_rolagemListener);
-    _lerFeedEstatico();
-  }
-
-  Future<void> _lerFeedEstatico() async {
-    setState(() {
-      _carregando = true;
-    });
-
-    final String conteudoJson =
-        await rootBundle.loadString("lib/recursos/json/feed.json");
-    _feedEstatico = json.decode(conteudoJson)["historias"];
-
-    _atualizarHistorias();
-  }
-
-  void _atualizarHistorias() {
-    setState(() {
-      _historiasPorPais = _agruparPorPais(_feedEstatico, _filtro);
-      _paisesCarregados =
-          _historiasPorPais.keys.take(_paginaAtual * _itensPorPagina).toList();
-      _carregando = false;
-    });
-  }
-
-  Map<String, List<dynamic>> _agruparPorPais(
-      List<dynamic> historias, String filtro) {
-    final Map<String, List<dynamic>> agrupados = {};
-    for (var historia in historias) {
-      if (filtro.isNotEmpty &&
-          !historia["titulo"].toLowerCase().contains(filtro.toLowerCase())) {
-        continue;
-      }
-
-      String pais = historia["pais"];
-      if (!agrupados.containsKey(pais)) {
-        agrupados[pais] = [];
-      }
-      agrupados[pais]?.add(historia);
-    }
-    return agrupados;
+    _carregarMaisHistorias();
   }
 
   void _rolagemListener() {
@@ -85,23 +43,33 @@ class _HistoriasState extends State<Historias> {
 
   Future<void> _carregarMaisHistorias() async {
     if (_carregando) return;
-    if (_paginaAtual * _itensPorPagina >= _historiasPorPais.keys.length) return;
 
     setState(() {
       _carregando = true;
-      _paginaAtual++;
     });
 
     await Future.delayed(const Duration(seconds: 3));
+    try {
+      List<dynamic> historias = [];
+      if (_filtro != "") {
+        historias = await _servicoHistorias.findHistorias(
+            _ultimaHistoria, _itensPorPagina, _filtro);
+      } else {
+        historias = await _servicoHistorias.getHistorias(
+            _ultimaHistoria, _itensPorPagina);
+      }
 
-    setState(() {
-      _paisesCarregados.addAll(
-        _historiasPorPais.keys
-            .skip((_paginaAtual - 1) * _itensPorPagina)
-            .take(_itensPorPagina),
-      );
-      _carregando = false;
-    });
+      if (historias.isNotEmpty) {
+        setState(() {
+          _ultimaHistoria = historias.last["historia_id"];
+          _historiasCarregadas.addAll(historias);
+        });
+      }
+    } finally {
+      setState(() {
+        _carregando = false;
+      });
+    }
   }
 
   @override
@@ -121,9 +89,10 @@ class _HistoriasState extends State<Historias> {
                 onSubmitted: (descricao) {
                   setState(() {
                     _filtro = descricao;
-                    _paginaAtual = 1;
-                    _atualizarHistorias();
+                    _ultimaHistoria = 0;
+                    _historiasCarregadas.clear();
                   });
+                  _carregarMaisHistorias();
                 },
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
@@ -149,80 +118,60 @@ class _HistoriasState extends State<Historias> {
                 )
               : IconButton(
                   onPressed: () {
-                    setState(() {
-                      estadoApp.onLogin(() => Toast.show(
-                            'Olá, ${estadoApp.usuario?.nome} você foi conectado com sucesso',
-                            duration: Toast.lengthLong,
-                            gravity: Toast.bottom,
-                          ));
-                    });
+                    estadoApp.onLogin(() => Toast.show(
+                          'Olá, ${estadoApp.usuario?.nome}, você foi conectado com sucesso',
+                          duration: Toast.lengthLong,
+                          gravity: Toast.bottom,
+                        ));
                   },
                   icon: const Icon(Icons.login),
                 ),
         ],
       ),
-      body: _carregando && _paginaAtual == 1
+      body: _carregando && _historiasCarregadas.isEmpty
           ? const Center(child: CircularProgressIndicator())
           : RefreshIndicator(
               onRefresh: () async {
-                _filtro = "";
-                _controladorFiltragem.clear();
-                _paginaAtual = 1;
-                _atualizarHistorias();
+                setState(() {
+                  _filtro = "";
+                  _controladorFiltragem.clear();
+                  _ultimaHistoria = 0;
+                  _historiasCarregadas.clear();
+                });
+                _carregarMaisHistorias();
               },
-              child: ListView.builder(
+              child: GridView.builder(
                 controller: _scrollController,
-                itemCount: _paisesCarregados.length + 1,
+                scrollDirection: Axis.vertical,
+                physics: const AlwaysScrollableScrollPhysics(),
+                shrinkWrap: true,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 2,
+                  childAspectRatio: 0.5,
+                ),
+                itemCount: _historiasCarregadas.length + (_carregando ? 2 : 0),
                 itemBuilder: (context, index) {
-                  if (index == _paisesCarregados.length) {
-                    return _carregando
-                        ? const Center(child: CircularProgressIndicator())
-                        : const SizedBox.shrink();
+                  if (index >= _historiasCarregadas.length) {
+                    return Card(
+                        elevation: 4,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: const SizedBox(
+                          width: 220,
+                          height: 250,
+                          child: Center(
+                            child: CircularProgressIndicator(),
+                          ),
+                        ));
                   }
 
-                  String pais = _paisesCarregados[index];
-                  List<dynamic> historias = _historiasPorPais[pais]!;
-
-                  return Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          children: [
-                            Image.asset(
-                              'lib/recursos/imagens/paises/${historias.first["bandeira"]}',
-                              width: 38,
-                            ),
-                            const SizedBox(width: 8),
-                            Text(
-                              pais,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        height: 350,
-                        child: ListView.separated(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: historias.length,
-                          separatorBuilder: (context, index) =>
-                              const SizedBox(width: 12),
-                          itemBuilder: (context, index) {
-                            final historia = historias[index];
-                            return SizedBox(
-                              width: 220,
-                              child: Historiacard(historia: historia),
-                            );
-                          },
-                        ),
-                      ),
-                      const SizedBox(height: 16),
-                    ],
+                  final historia = _historiasCarregadas[index];
+                  return SizedBox(
+                    width: 220,
+                    height: 250,
+                    child: Historiacard(historia: historia),
                   );
                 },
               ),

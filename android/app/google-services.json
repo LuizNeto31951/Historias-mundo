@@ -12,7 +12,12 @@
           "package_name": "com.example.historias_mundo"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "572398802928-6jgi2vtcu4f58nh3mq97tkguubifo37u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyC3EvHCnoBVpY8NkrLYHiYXAO_9E2bXg58"
@@ -20,7 +25,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "572398802928-6jgi2vtcu4f58nh3mq97tkguubifo37u.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "572398802928-5cuvdkdq5kdsf54hvluj1mef707ls4b8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.historiasMundo"
+              }
+            }
+          ]
         }
       }
     }

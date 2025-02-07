@@ -6,6 +6,8 @@ import 'package:flutter/services.dart';
 import 'package:page_view_dot_indicator/page_view_dot_indicator.dart';
 import 'package:toast/toast.dart';
 
+import '../apis/api.dart';
+
 class Detalhes extends StatefulWidget {
   const Detalhes({super.key});
 
@@ -18,13 +20,13 @@ class Detalhes extends StatefulWidget {
 enum _EstadoHistoria { naoVerificado, temHistoria, semHistoria }
 
 class _DetalhesState extends State<Detalhes> {
-  late dynamic _feedEstatico;
-
   _EstadoHistoria _temHistoria = _EstadoHistoria.naoVerificado;
   late dynamic _historia;
 
   late PageController _controladorSlides;
   late int _slideSelecionado;
+  late ServicoHistorias _servicoHistorias;
+  late ServicoCurtidas _servicoCurtidas;
 
   bool _curtiu = false;
 
@@ -33,8 +35,10 @@ class _DetalhesState extends State<Detalhes> {
     super.initState();
 
     ToastContext().init(context);
+    _servicoHistorias = ServicoHistorias();
+    _servicoCurtidas = ServicoCurtidas();
 
-    _lerFeedEstatico();
+    _carregarHistoria();
     _iniciarSlides();
   }
 
@@ -43,22 +47,29 @@ class _DetalhesState extends State<Detalhes> {
     _controladorSlides = PageController(initialPage: _slideSelecionado);
   }
 
-  Future<void> _lerFeedEstatico() async {
-    String conteudoJson =
-        await rootBundle.loadString("lib/recursos/json/feed.json");
-    _feedEstatico = await json.decode(conteudoJson);
-
-    _carregarHistoria();
-  }
-
   void _carregarHistoria() {
-    setState(() {
-      _historia = _feedEstatico['historias']
-          .firstWhere((historia) => historia["_id"] == estadoApp.idHistoria);
+    _servicoHistorias.findHistoria(estadoApp.idHistoria).then((historia) {
+      _historia = historia;
 
-      _temHistoria = _historia != null
-          ? _EstadoHistoria.temHistoria
-          : _EstadoHistoria.semHistoria;
+      if (estadoApp.usuario != null) {
+        _servicoCurtidas
+            .curtiu(estadoApp.usuario!, estadoApp.idHistoria)
+            .then((curtiu) {
+          setState(() {
+            _temHistoria = _historia != null
+                ? _EstadoHistoria.temHistoria
+                : _EstadoHistoria.semHistoria;
+            _curtiu = curtiu;
+          });
+        });
+      } else {
+        setState(() {
+          _temHistoria = _historia != null
+              ? _EstadoHistoria.temHistoria
+              : _EstadoHistoria.semHistoria;
+          _curtiu = false;
+        });
+      }
     });
   }
 
@@ -72,7 +83,7 @@ class _DetalhesState extends State<Detalhes> {
                   const Row(children: [
                     Padding(
                         padding: EdgeInsets.only(left: 6),
-                        child: Text("Historias do mundo"))
+                        child: Text("Histórias do Mundo"))
                   ]),
                   GestureDetector(
                       onTap: () {
@@ -84,12 +95,12 @@ class _DetalhesState extends State<Detalhes> {
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Icon(Icons.error, size: 32, color: Colors.red),
-          Text("historia inexistente :(",
+          Text("História inexistente :(",
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
                   color: Colors.red)),
-          Text("selecione outra historia na tela anterior",
+          Text("Selecione outra história na tela anterior",
               style: TextStyle(fontSize: 14))
         ])));
   }
@@ -103,14 +114,14 @@ class _DetalhesState extends State<Detalhes> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Row(children: [
           Row(children: [
-            Image.asset('lib/recursos/imagens/paises/${_historia["bandeira"]}',
+            Image.network(formatarCaminhoArquivo(_historia["bandeira"]),
                 width: 38),
             Padding(
                 padding: const EdgeInsets.only(
                   left: 10.0,
                 ),
                 child: Text(
-                  _historia["titulo"],
+                  _historia["titulo_historia"],
                   style: const TextStyle(
                       fontSize: 15, fontWeight: FontWeight.bold),
                 ))
@@ -139,8 +150,8 @@ class _DetalhesState extends State<Detalhes> {
                   });
                 },
                 itemBuilder: (context, pagePosition) {
-                  return Image.asset(
-                    'lib/recursos/imagens/historias/${_historia["image"]}',
+                  return Image.network(
+                    formatarCaminhoArquivo(_historia["imagem"]),
                     fit: BoxFit.cover,
                   );
                 },
@@ -152,21 +163,35 @@ class _DetalhesState extends State<Detalhes> {
                         ? IconButton(
                             onPressed: () {
                               if (_curtiu) {
-                                setState(() {
-                                  _historia['likes'] = _historia['likes'] - 1;
+                                _servicoCurtidas
+                                    .descurtir(estadoApp.usuario!,
+                                        estadoApp.idHistoria)
+                                    .then((resultado) {
+                                  if (resultado["situacao"] == "ok") {
+                                    Toast.show("Avaliação removida",
+                                        duration: Toast.lengthLong,
+                                        gravity: Toast.bottom);
 
-                                  _curtiu = false;
+                                    setState(() {
+                                      _carregarHistoria();
+                                    });
+                                  }
                                 });
                               } else {
-                                setState(() {
-                                  _historia['likes'] = _historia['likes'] + 1;
+                                _servicoCurtidas
+                                    .curtir(estadoApp.usuario!,
+                                        estadoApp.idHistoria)
+                                    .then((resultado) {
+                                  if (resultado["situacao"] == "ok") {
+                                    Toast.show("Obrigado pela sua avaliação",
+                                        duration: Toast.lengthLong,
+                                        gravity: Toast.bottom);
 
-                                  _curtiu = true;
+                                    setState(() {
+                                      _carregarHistoria();
+                                    });
+                                  }
                                 });
-
-                                Toast.show("Obrigado pela avaliação",
-                                    duration: Toast.lengthLong,
-                                    gravity: Toast.bottom);
                               }
                             },
                             icon: Icon(_curtiu
@@ -189,48 +214,52 @@ class _DetalhesState extends State<Detalhes> {
               boxShape: BoxShape.circle,
             ),
           ),
-          Card(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Text(_historia["descricao"],
-                        style: const TextStyle(
-                            fontSize: 12, fontWeight: FontWeight.bold))),
-                if (_historia["detalhada"] != null)
-                  ..._historia["detalhada"]
-                      .map<Widget>((paragrafo) => Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 8.0, vertical: 4.0),
-                            child: Text(
-                              paragrafo,
-                              style: const TextStyle(fontSize: 12),
-                            ),
-                          ))
-                      .toList(),
-                Padding(
-                    padding: const EdgeInsets.only(left: 8.0, bottom: 10.0),
-                    child: Row(children: [
-                      Padding(
-                          padding: const EdgeInsets.only(left: 6.0),
-                          child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Icon(
-                                  Icons.favorite_rounded,
-                                  color: Colors.red,
-                                  size: 18,
+          Expanded(
+            child: SingleChildScrollView(
+              child: Card(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Text(_historia["descricao"],
+                            style: const TextStyle(
+                                fontSize: 12, fontWeight: FontWeight.bold))),
+                    if (_historia["detalhada"] != null)
+                      ...jsonDecode(_historia["detalhada"])
+                          .map<Widget>((paragrafo) => Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 8.0, vertical: 4.0),
+                                child: Text(
+                                  paragrafo,
+                                  style: const TextStyle(fontSize: 12),
                                 ),
-                                Text(
-                                  _historia["likes"].toString(),
-                                  style: const TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 12),
-                                ),
-                              ]))
-                    ]))
-              ],
+                              ))
+                          .toList(),
+                    Padding(
+                        padding: const EdgeInsets.only(left: 8.0, bottom: 10.0),
+                        child: Row(children: [
+                          Padding(
+                              padding: const EdgeInsets.only(left: 6.0),
+                              child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Icon(
+                                      Icons.favorite_rounded,
+                                      color: Colors.red,
+                                      size: 18,
+                                    ),
+                                    Text(
+                                      _historia["likes"].toString(),
+                                      style: const TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 12),
+                                    ),
+                                  ]))
+                        ]))
+                  ],
+                ),
+              ),
             ),
           ),
         ],
@@ -242,11 +271,9 @@ class _DetalhesState extends State<Detalhes> {
   Widget build(BuildContext context) {
     Widget detalhes = const SizedBox.shrink();
 
-    if (_temHistoria == _EstadoHistoria.naoVerificado) {
-      detalhes = const SizedBox.shrink();
-    } else if (_temHistoria == _EstadoHistoria.temHistoria) {
+    if (_temHistoria == _EstadoHistoria.temHistoria) {
       detalhes = _exibirHistoria();
-    } else {
+    } else if (_temHistoria == _EstadoHistoria.semHistoria) {
       detalhes = _exibirMensagemHistoriaInexistente();
     }
 

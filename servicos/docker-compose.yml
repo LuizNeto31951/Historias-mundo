@@ -1,0 +1,40 @@
+version: '3.1'
+services:
+  historias:
+    build: ./dockerfiles/python
+    container_name: historias
+    hostname: historias
+    restart: always
+    volumes:
+      - ./historias:/servico
+    command: python3 /servico/historias.py
+    ports:
+      - "5001:5000"
+  likes:
+    build: ./dockerfiles/python
+    container_name: likes
+    hostname: likes
+    restart: always
+    volumes:
+      - ./likes:/servico
+    command: python3 /servico/likes.py
+    ports:
+      - "5002:5000"
+  banco:
+    image: mysql
+    container_name: banco
+    hostname: banco
+    restart: always
+    ports:
+      - "5003:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+  arquivos:
+    build: ./dockerfiles/nginx
+    container_name: arquivos
+    hostname: arquivos
+    restart: always
+    volumes:
+      - ./imagens:/usr/share/nginx/html
+    ports:
+      - "5004:80"
